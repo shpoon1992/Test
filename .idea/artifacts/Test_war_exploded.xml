@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Test:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Test_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="CTF/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="CTF" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="JPA 2.0-2.0" />
+          <element id="library" level="project" name="org.eclipse.persistence:eclipselink:2.6.1" />
+          <element id="library" level="project" name="mysql-connector-java-5.1.35-bin" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

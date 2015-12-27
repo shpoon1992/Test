@@ -1,0 +1,578 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 17-Dec-2013, 3:49:04 PM
+    Author     : ssandy
+*/
+
+body{
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    line-height: 1.2;
+}
+
+html, body {
+    padding:0;
+    min-height: 100vh;
+}
+
+.container-fluid{
+    padding: 0;
+    margin: 0;
+}
+
+.site-contents{
+    min-height: 100vh;
+}
+/*
+.wrecking-ball{
+    display: none;
+}
+
+.cssanimations .wrecking-ball.came-in-like-a{
+    display:block;
+    height: 945px;
+    width: 469px;
+    z-index: 10000;
+    -webkit-transform-origin: top center;
+    -webkit-animation: wrecking 5s 0;
+    transform-origin: top center;
+    animation: wrecking 5s 1;
+    position: fixed;
+    background-image: url(../img/santa_left.png);
+    top: -150px;
+}
+
+@-webkit-keyframes wrecking{
+    0%{
+        -webkit-transform: rotate(-112deg);
+        -webkit-transform-origin: top center;
+        background-image: url(../img/santa_left.png);
+    }
+    99%{
+        background-image: url(../img/santa_left.png);
+    }
+    100%{
+        background-image: none;
+        -webkit-transform: rotate(112deg);
+        -webkit-transform-origin: top center;
+        display: none;
+    }
+}
+
+@-moz-keyframes wrecking{
+    0%{
+        -moz-transform: rotate(-112deg);
+        -moz-transform-origin: top center;
+        background-image: url(../img/santa_left.png);
+    }
+    99%{
+        background-image: url(../img/santa_left.png);
+    }
+    100%{
+        background-image: none;
+        -moz-transform: rotate(112deg);
+        -moz-transform-origin: top center;
+        display: none;
+    }
+}
+
+@-keyframes wrecking{
+    0%{
+        transform: rotate(-112deg);
+        transform-origin: top center;
+        background-image: url(../img/santa_left.png);
+    }
+    99%{
+        background-image: url(../img/santa_left.png);
+    }
+    100%{
+        background-image: none;
+        transform: rotate(112deg);
+        transform-origin: top center;
+        display: none;
+    }
+}
+*/
+h1, h2, h3, h4, h5, h6{
+    line-height: 1.3;
+}
+
+header{
+    /*background-color: #f2634f;
+    background-image: url(../img/bgTile_1.png);*/
+    background-color: #000000;
+    *height: 400px;
+    min-height: 400px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+/**{
+    border: solid mediumspringgreen 1px !important;
+}*/
+
+header .presented-by,
+header .image,
+header .title,
+header .sub-title{
+    text-align: center;
+    margin: 0 auto;
+    max-width: 750px;
+    color: #fff;
+}
+
+header .presented-by{
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+header .title{
+    font-size: 48px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 0 20px 0 20px;
+}
+
+header .sub-title{
+    font-size: 30px;
+    font-weight: 300;
+    max-width: 500px;
+    padding: 0 20px 0 20px;
+}
+
+header .image{
+    padding: 20px 0;
+}
+/*
+@-keyframes floating{
+    0%{
+        transform: translate(0px);
+    }
+    50%{
+        transform: translateY(10px);
+    }
+    100%{
+        transform: translate(0px);
+    }
+}
+*/
+@-moz-keyframes floating{
+    0%{
+        -moz-transform: translate(0px);
+    }
+    50%{
+        -moz-transform: translateY(10px);
+    }
+    100%{
+        -moz-transform: translate(0px);
+    }
+}
+
+@-webkit-keyframes floating{
+    0%{
+        -webkit-transform: translate(0px);
+    }
+    50%{
+        -webkit-transform: translateY(10px);
+    }
+    100%{
+        -webkit-transform: translate(0px);
+    }
+}
+
+.cssanimations .float {
+    animation: floating 2.5s linear infinite;
+    -webkit-animation: floating 2.5s linear infinite;
+    -moz-animation: floating 2.5s linear infinite;
+    animation-direction: alternate;
+    -webkit-animation-direction: alternate;
+    -moz-animation-direction: alternate;
+}
+
+#main{
+    text-align: center;
+    padding: 35px 0 10px 0;
+}
+
+.questions{
+    width: 90%;
+    max-width: 820px;
+    margin: 0 auto 20px auto;
+}
+
+.question-count{
+    font-weight: 300;
+    font-size: 30px;
+    color: #c2c2c2;
+    margin-bottom: 40px;
+}
+
+.question-text{
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.25;
+    /*color: #f2634f;*/
+    color: #000000;
+    margin-bottom: 60px;
+}
+
+.attempt-text{
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.25;
+    /*color: #f2634f;*/
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+.answer-text{
+    padding: 10px;
+    border: dashed 3px #c2c2c2;
+    color: #c2c2c2;
+    border-radius: 10px;
+    padding: 30px;
+    width: 39%;
+    margin-bottom: 50px;
+    float: left;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 1.2;
+}
+
+.login-register-text{
+    padding: 10px;
+    border: dashed 3px #c2c2c2;
+    color: #c2c2c2;
+    border-radius: 10px;
+    padding: 30px;
+    width: 39%;
+    margin: auto 28% 20px auto;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 1.2;
+    cursor: pointer;
+}
+
+.answer-text small{
+    line-height: 1;
+    font-size: 60%;
+    display: block;
+    padding: 8px;
+}
+
+.answer-text.selected, .go.active{
+    background-color: #5cc687;
+    border-color: #5cc687;
+    border-style: solid;
+    color: #fff;
+}
+
+.answer-text.odd{
+    float: left;
+}
+
+.answer-text.even{
+    float: right;
+}
+
+.answer-text input{
+    display: none;
+}
+/*
+.your-santa{
+    display: none;
+}
+
+.your-santa-text{
+    color: #f2634f;
+    font-size: 48px;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.which-santa{
+    color: #555;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1;
+    margin: 20px 0;
+}
+
+.which-santa-photo{
+    position: relative;
+}
+
+.cssanimations .which-santa-photo .sparkle{
+    background-image: url(../img/sparkle.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: rotating 10s infinite linear;
+    -webkit-animation: rotating 10s infinite linear;
+    -moz-animation: rotating 10s infinite linear;
+    animation-direction: alternate;
+    -webkit-animation-direction: alternate;
+    -moz-animation-direction: alternate;
+
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+@-keyframes rotating {
+    0% {
+        transform: rotate(0deg);
+        background-image: url(../img/sparkle.png);
+    }
+    100% {
+        transform: rotate(360deg);
+        background-image: url(../img/sparkle.png);
+    }
+}
+
+@-moz-keyframes rotating {
+    0% { 
+        -moz-transform: rotate(0deg);
+        background-image: url(../img/sparkle.png);
+    }
+    100% {
+        -moz-transform: rotate(360deg);
+        background-image: url(../img/sparkle.png);
+    }
+}
+
+@-webkit-keyframes rotating {
+    0% { 
+        -webkit-transform: rotate(0deg);
+        background-image: url(../img/sparkle.png);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        background-image: url(../img/sparkle.png);
+    }
+}
+
+.which-santa-tagline{
+    color: #555;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 35px;
+}
+
+.which-santa-other{
+    color: #555;
+    max-width: 400px;
+    line-height: 1.5;
+    margin: 45px auto 55px auto;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.which-santa-other a,
+.which-santa-other a:hover,
+.which-santa-other a:active,
+.which-santa-other a:visited{
+    color: #5cc687;
+}
+
+.share {
+    margin-top: 50px;
+    margin-bottom: 35px;
+}
+
+.share a {
+    background-color: #5cc687;
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    line-height: 1;
+    background-position: 15px center;
+    background-repeat: no-repeat;
+    padding-left: 55px;
+}
+
+.share a:hover{
+    background-color: #67ca8f;
+}
+
+.share .twitter{
+    background-image: url(../img/twitter.png);
+    background-size: 32px 26px;
+}
+
+.share .facebook{
+    background-image: url(../img/facebook.png);
+    background-size: 32px 32px;
+}
+
+.thanks{
+    background-color: #5cc687;
+    color: #fff;
+    padding: 80px 0;
+    margin-bottom: -10px;
+    background-image: url(../img/bgTile_1.png);
+}
+
+.thanks img{
+    margin: 20px;
+}
+
+.thanks-images a:hover{
+    text-decoration: none;
+}
+
+.thanks a,
+.thanks a:hover,
+.thanks a:active,
+.thanks a:visited{
+    color: #fff685;
+}
+
+.thanks .clients{
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.thanks .clients-sub{
+    font-weight: 300;
+    font-size: 30px;
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.25;
+    letter-spacing: 1px;
+}
+*/
+footer{
+    /*background-color: #f2634f;
+    background-image: url(../img/bgTile_1.png);*/
+    background-color: #000000;
+    height: 25px;
+    color: #fff;
+    letter-spacing: 1px;
+    font-weight: 300;
+    font-size: 10px;
+    text-align: center;
+    padding-top: 23px;
+    padding-bottom: 50px;
+}
+
+footer .wrap{
+    max-width: 650px;
+    margin: 0 auto;
+    clear: both;
+}
+
+footer .copyright{
+    float: left;
+}
+
+footer .lr{
+    float: right;
+}
+
+footer .design-by{
+    float: right;
+}
+
+footer .hosted-by{
+    margin-right: 100px;
+}
+
+footer .design-by img{
+    width: 11px;
+    height: 21px;
+    margin-top: -6px;
+    margin-left: -1px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+footer .design-by a,
+footer .design-by a:hover,
+footer .design-by a:visited,
+footer .design-by a:active{
+    color: #fff;
+    text-decoration: none;
+}
+
+footer.done{
+    background-color: #67ca8f;
+    background-image: none;
+    margin-top: -40px;
+}
+
+.answer-row{
+    clear: both;
+}
+
+@media only screen and (max-width: 767px){
+    body{
+        padding: 0;
+    }
+    .question-text{
+        height: auto;
+        font-size: 40px;
+    }
+    .answer-text{
+        width: 35%;
+    }
+}
+
+@media only screen and (max-width: 655px){
+    .answer-text.odd,
+    .answer-text.even,
+    .answer-text{
+        display: block;
+        float: none;
+        text-align: center;
+        margin: 15px auto;
+    }
+    #main {
+        text-align: center;
+        /*padding: 35px 0 50px 0;*/
+    }
+    .answer-text{
+        width: 65%;
+    }
+}
+
+@media only screen and (max-width: 450px){
+
+    .your-santa-text{
+        font-size: 40px;
+    }
+    body{
+        word-wrap: break-word;
+        font-size: 80%;
+    }
+    .share{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .share a{
+        display: block;
+        margin: 10px auto;
+    }
+    .thanks img {
+        margin: 5px;
+    }
+    .pull-left, .pull-right{
+        float: none;
+        display:block;
+        text-align:center;
+    }
+    footer.done{
+        height: auto;
+        padding: 15px;
+    }
+}

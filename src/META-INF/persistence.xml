@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+
+    <persistence-unit name="NewPersistenceUnit">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>model.Answer</class>
+        <class>model.Question</class>
+        <properties>
+            <!--<property name="eclipselink.jdbc.url" value="jdbc:mysql://localhost:3306/smuctf"/>
+            <property name="eclipselink.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="eclipselink.jdbc.user" value="root"/>
+            <property name="eclipselink.jdbc.password" value="mysql"/>-->
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/smuctf"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="mysql"/>
+        </properties>
+    </persistence-unit>
+</persistence>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="NewPersistenceUnit/EclipseLink" uuid="010e6cfd-abd8-4123-8366-3bc7ce1a31a0">
+    <database-info product="MySQL" version="5.7.10-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.4">
+      <schema id="1" name="smuctf"/>
+      <table id="2" parent="1" name="answer"/>
+      <table id="3" parent="1" name="question"/>
+      <column id="4" parent="2" name="answer_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="5" parent="2" name="answer_desc">
+        <mandatory>1</mandatory>
+        <data-type>varchar(500)</data-type>
+      </column>
+      <column id="6" parent="2" name="question_id">
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="7" parent="2" name="answer_id_UNIQUE">
+        <columns>answer_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="8" parent="2" name="Answer_To_Question_idx">
+        <columns>question_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="9" parent="2" name="answer_id_UNIQUE">
+        <columns>answer_id</columns>
+        <underlying-index>answer_id_UNIQUE</underlying-index>
+      </key>
+      <key id="10" parent="2" name="PRIMARY">
+        <columns>answer_id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="11" parent="2" name="Answer_To_Question">
+        <columns>question_id</columns>
+        <ref-key>~.question.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="12" parent="3" name="question_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="13" parent="3" name="question_desc">
+        <mandatory>1</mandatory>
+        <data-type>varchar(500)</data-type>
+      </column>
+      <column id="14" parent="3" name="answer_id">
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="15" parent="3" name="question_id_UNIQUE">
+        <columns>question_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="16" parent="3" name="Question_To_Answer_idx">
+        <columns>answer_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="17" parent="3" name="PRIMARY">
+        <columns>question_id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="18" parent="3" name="question_id_UNIQUE">
+        <columns>question_id</columns>
+        <underlying-index>question_id_UNIQUE</underlying-index>
+      </key>
+      <foreign-key id="19" parent="3" name="Question_To_Answer">
+        <columns>answer_id</columns>
+        <ref-key>~.answer.answer_id_UNIQUE</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+    </database-model>
+  </data-source>
+</component>
