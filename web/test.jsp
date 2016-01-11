@@ -53,7 +53,7 @@
     <jsp:include page="modal.jsp"/>
     <header class="row main-header">
         <div class="presented-by">
-            <small>Whitehats presents: A Pre-CTF Understanding Quiz</small>
+            <small>Whitehats presents: A CTF Understanding Quiz</small>
         </div>
         <div class="image float">
             <img height="204" width="155" src="img/whitehats.png" alt="santa's floating disembodied head" class="float" />
@@ -159,10 +159,13 @@
     </div>
     <footer class="main-footer">
         <div class="wrap">
-            <div class="lr">
+            <div class="lr main-nav">
                 <!--&copy; 2013 rTraction Ho Ho Ho-->
-                <a href="">Login</a>&emsp;| &emsp;
-                <a href="">Register</a>
+                <p>
+                <a class="cd-login" href="#0">Login</a>&emsp;
+                <label class="separator">|</label>&emsp;
+                <a class="cd-register" href="#0">Register</a>
+                </p>
             </div>
 
             <div class="hosted-by">

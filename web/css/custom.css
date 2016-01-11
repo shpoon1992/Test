@@ -480,6 +480,12 @@ footer .lr{
     float: right;
 }
 
+footer .separator{
+    font-size: 11px;
+    cursor: default;
+    display: inline;
+}
+
 footer .design-by{
     float: right;
 }

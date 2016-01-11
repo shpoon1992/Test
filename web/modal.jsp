@@ -14,11 +14,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>-->
-    <!--<link href='../css/latin-ext.css' rel='stylesheet' type='text/css'>-->
-    <!--<link rel="stylesheet" href="modal/css/reset.css"> --> <!-- CSS reset -->
-    <!--<link rel="stylesheet" href="modal/css/style.css"> --><!-- Gem style -->
-    <script src="../js/modernizr.js"></script> <!-- Modernizr -->
+    <!--<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='../css/latin-ext.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="modal/css/reset.css">  <!-- CSS reset -->
+    <!--<link rel="stylesheet" href="modal/css/style.css"> <!-- Gem style -->
+    <!--<script src="../js/modernizr.js"></script> <!-- Modernizr -->
 </head>
 <body>
 <!--
@@ -50,8 +50,8 @@
 
                 <p class="fieldset">
                     <label class="image-replace cd-password" for="signin-password">Password</label>
-                    <input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="Password">
-                    <a href="#0" class="hide-password">Hide</a>
+                    <input class="full-width has-padding has-border" id="signin-password" type="password"  placeholder="Password">
+                    <!--<a href="#0" class="hide-password">Hide</a>-->
                     <span class="cd-error-message">Error message here!</span>
                 </p>
 
@@ -85,8 +85,8 @@
 
                 <p class="fieldset">
                     <label class="image-replace cd-password" for="signup-password">Password</label>
-                    <input class="full-width has-padding has-border" id="signup-password" type="text"  placeholder="Password">
-                    <a href="#0" class="hide-password">Hide</a>
+                    <input class="full-width has-padding has-border" id="signup-password" type="password"  placeholder="Password">
+                    <!--<a href="#0" class="hide-password">Hide</a>-->
                     <span class="cd-error-message">Error message here!</span>
                 </p>
 

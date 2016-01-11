@@ -13,6 +13,8 @@ public class Question {
     private int questionId;
     private String questionDesc;
     private Integer answerId;
+    private Integer levelId;
+    private Integer topicId;
 
     @Id
     @Column(name = "question_id", nullable = false)
@@ -65,5 +67,25 @@ public class Question {
         result = 31 * result + (questionDesc != null ? questionDesc.hashCode() : 0);
         result = 31 * result + (answerId != null ? answerId.hashCode() : 0);
         return result;
+    }
+
+    @Basic
+    @Column(name = "level_id", nullable = true)
+    public Integer getLevelId() {
+        return levelId;
+    }
+
+    public void setLevelId(Integer levelId) {
+        this.levelId = levelId;
+    }
+
+    @Basic
+    @Column(name = "topic_id", nullable = true)
+    public Integer getTopicId() {
+        return topicId;
+    }
+
+    public void setTopicId(Integer topicId) {
+        this.topicId = topicId;
     }
 }

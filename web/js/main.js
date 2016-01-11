@@ -11,9 +11,6 @@ $().ready(function() {
         ga('send', 'event', 'download', 'click', 'pdf', 1);
     });
     
-    
-    
-    
     var formModal = $('.cd-user-modal'),
     formLogin = formModal.find('#cd-login'),
     formSignup = formModal.find('#cd-signup'),
@@ -137,8 +134,10 @@ $().ready(function() {
             })
         });
     }
-    
-    
+
+    //mainNav.find( "a" ).css("display", "inline-block");
+    //mainNav.find( "a" ).css("display", "inline-flex");
+    //$( ".main-nav a" ).css( "border", "13px solid red" );
     
     
 });
