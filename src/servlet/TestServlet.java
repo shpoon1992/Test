@@ -19,7 +19,6 @@ import java.io.IOException;
 @WebServlet(name = "TestServlet")
 public class TestServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Navigator navigator = new Navigator();
         EntityManager em = EMF.get().createEntityManager();
         em.getTransaction().begin();
 
@@ -80,7 +79,7 @@ public class TestServlet extends HttpServlet {
 
         em.getTransaction().commit();
 
-        navigator.navigate(request, response, "/index.jsp", getServletContext());
+        Navigator.navigate(request, response, "/index.jsp", getServletContext());
 
     }
 

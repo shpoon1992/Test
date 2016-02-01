@@ -4,10 +4,11 @@
     <persistence-unit name="persistenceUnit">
         <class>model.Answer</class>
         <class>model.Question</class>
-        <class>model.Group</class>
         <class>model.Level</class>
         <class>model.Member</class>
         <class>model.Topic</class>
+        <class>model.Account</class>
+        <class>model.Team</class>
         <properties>
             <property name="eclipselink.jdbc.url" value="jdbc:mysql://localhost:3306/smuctf"/>
             <property name="eclipselink.jdbc.driver" value="com.mysql.jdbc.Driver"/>

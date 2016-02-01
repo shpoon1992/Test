@@ -10,9 +10,8 @@ import java.io.IOException;
  * Created by User on 13/12/2015.
  */
 public class Navigator {
-    public Navigator() {}
 
-    public void navigate(HttpServletRequest request,
+    public static void navigate(HttpServletRequest request,
                          HttpServletResponse response, String url, ServletContext context)
             throws IOException, ServletException {
         context.getRequestDispatcher(url)

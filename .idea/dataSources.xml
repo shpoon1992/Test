@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1835339490">
+  <component name="DataSourceManagerImpl" format="xml" hash="1112493182">
     <data-source source="LOCAL" name="NewPersistenceUnit/EclipseLink" uuid="010e6cfd-abd8-4123-8366-3bc7ce1a31a0">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>

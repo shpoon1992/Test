@@ -16,11 +16,12 @@ jQuery(document).ready(function($){
 	});
 
 	//open sign-up form
-	mainNav.on('click', '.cd-signup', signup_selected);
+	//mainNav.on('click', '.cd-signup', signup_selected);
 	//open login-form form
 	mainNav.on('click', '.cd-signin', login_selected);
 
 	//close modal
+
 	formModal.on('click', function(event){
 		if( $(event.target).is(formModal) || $(event.target).is('.cd-close-form') ) {
 			formModal.removeClass('is-visible');
@@ -33,7 +34,7 @@ jQuery(document).ready(function($){
 	    }
     });
 
-	//switch from a tab to another
+	/*//switch from a tab to another
 	formModalTab.on('click', function(event) {
 		event.preventDefault();
 		( $(event.target).is( tabLogin ) ) ? login_selected() : signup_selected();
@@ -60,7 +61,7 @@ jQuery(document).ready(function($){
 	backToLoginLink.on('click', function(event){
 		event.preventDefault();
 		login_selected();
-	});
+	});*/
 
 	function login_selected(){
 		mainNav.children('ul').removeClass('is-visible');
@@ -72,7 +73,7 @@ jQuery(document).ready(function($){
 		tabSignup.removeClass('selected');
 	}
 
-	function signup_selected(){
+	/*function signup_selected(){
 		mainNav.children('ul').removeClass('is-visible');
 		formModal.addClass('is-visible');
 		formLogin.removeClass('is-selected');
@@ -90,13 +91,15 @@ jQuery(document).ready(function($){
 
 	//REMOVE THIS - it's just to show error messages 
 	formLogin.find('input[type="submit"]').on('click', function(event){
+		console.log("hello1");
 		event.preventDefault();
 		formLogin.find('input[type="email"]').toggleClass('has-error').next('span').toggleClass('is-visible');
 	});
 	formSignup.find('input[type="submit"]').on('click', function(event){
+		console.log("hello2");
 		event.preventDefault();
 		formSignup.find('input[type="email"]').toggleClass('has-error').next('span').toggleClass('is-visible');
-	});
+	});*/
 
 
 	//IE9 placeholder fallback

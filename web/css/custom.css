@@ -244,6 +244,10 @@ header .image{
     line-height: 1.2;
 }
 
+.answer-text a{
+    color: #c2c2c2;
+}
+
 .login-register-text{
     padding: 10px;
     border: dashed 3px #c2c2c2;
@@ -491,7 +495,8 @@ footer .design-by{
 }
 
 footer .hosted-by{
-    margin-right: 100px;
+    /*margin-right: 100px;*/
+    text-align: center;
 }
 
 footer .design-by img{

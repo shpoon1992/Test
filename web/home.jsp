@@ -46,15 +46,13 @@
     </script>
 </head>
 <body>
-<%
-    HttpSession mySession = request.getSession(false);
+<%  HttpSession mySession = request.getSession(false);
+    //boolean isLoggedIn = request.getParameterMap().containsKey("team");
     Team team = (Team) mySession.getAttribute("team");
-    //boolean isLoggedIn = request.getParameterMap().containsKey("team");*/
+    System.out.println("hi: " + mySession.getAttribute("team"));
 %>
 
 <div class="container-fluid site-contents">
-
-    <jsp:include page="modal.jsp"/>
 
     <!--    HEADER HERE     -->
 
@@ -85,56 +83,86 @@
 
         if (team != null) {
             System.out.println("signed in");
-
-            //Team team = (Team)session.getAttribute("team");
+            //Team team = (Team) mySession.getAttribute("team");
         %>
-        <script type="text/javascript">
-            window.location.replace("/home.jsp");
-        </script>
-        <!--<div class='question-text'>Welcome !</div>-->
-
+        <div class='question-text'>Welcome <%=team.getTeamName() %>!</div>
+        <!--
+        <nav class="main-nav">
+            <div class="cd-login login-register-text" href="#0">Log In</div>
+            <br/>
+            <div class="cd-register login-register-text" href="#0">Register</div>
+        </nav>
+        -->
+        <div class="questions">
+            <div class="question-count">
+                <!--Question 1/8-->
+            </div>
+            <div class='question-text'>
+                <!--How much time can you commit to the Santa gig?-->
+                MAIN MENU
+            </div>
+            <div class="answers clear clearfix">
+                <div class="answer-row">
+                    <label class="answer-text answer-0 odd" data-answer-number="0">
+                        <!--I'm free this weekend-->
+                        <a href="">View Member Details</a>
+                    </label>
+                    <label class="answer-text answer-1 even" data-answer-number="1">
+                        <a href="">Edit Member Details</a>
+                    </label>
+                </div>
+                <div class="answer-row">
+                    <label class="answer-text answer-2 odd" data-answer-number="2">
+                        <a href="">Attempt Quiz</a>
+                    </label>
+                    <label class="answer-text answer-3 even" data-answer-number="3" onclick="onLogout()">
+                        <a href="/logout">Log Out</a>
+                    </label>
+                </div>
+            </div>
+        </div>
         <%
         } else {
             System.out.println("not signed in");
+            //Navigator.navigate(request, response, "/test.jsp", getServletConfig().getServletContext());
         %>
-        <div class='attempt-text'>
-            Attempt the quiz now?
-        </div>
-        <nav class="main-nav">
-            <div class="cd-login login-register-text" href="#0">Log In</div>
-            <!--
-            <br/>
-            <div class="cd-register login-register-text" href="#0">Register</div>
-            -->
-        </nav>
+        <script type="text/javascript">
+            window.location.replace("/test.jsp");
+        </script>
         <%
         }
         %>
         <!--
         <div class="questions">
             <div class="question-count">
-            Question 1/8		    </div>
+                Question 1/8
+            </div>
             <div class='question-text'>
-            How much time can you commit to the Santa gig?		    </div>
+                How much time can you commit to the Santa gig?
+            </div>
+
             <div class="answers clear clearfix">
             <div class="answer-row">
+                <label class="answer-text answer-0 odd" data-answer-number="0" data-type="mall bad">
+                    I'm free this weekend
+                </label>
 
-            <label class="answer-text answer-0 odd" data-answer-number="0" data-type="mall bad">
-            I'm free this weekend    			    </label>
+                <label class="answer-text answer-1 even" data-answer-number="1" data-type="stnick">
+                    I've got all year
+                </label>
+            </div>
 
-            <label class="answer-text answer-1 even" data-answer-number="1" data-type="stnick">
-        I've got all year    			    </label>
-        </div>
-        <div class="answer-row">
+            <div class="answer-row">
+                <label class="answer-text answer-2 odd" data-answer-number="2" data-type="hipster">
+                    Time is but a concept
+                </label>
 
-        <label class="answer-text answer-2 odd" data-answer-number="2" data-type="hipster">
-        Time is but a concept    			    </label>
-
-        <label class="answer-text answer-3 even" data-answer-number="3" data-type="office commercial">
-        Let me check my calendar    			    </label>
-        </div>
-        <div class="answer-row">
-        </div>
+                <label class="answer-text answer-3 even" data-answer-number="3" data-type="office commercial">
+                    Let me check my calendar
+                </label>
+            </div>
+            <div class="answer-row">
+            </div>
         </div>
         </div>
         <div class="your-santa">
@@ -187,15 +215,6 @@
 
     <footer class="main-footer">
         <div class="wrap">
-            <!--&copy; 2013 rTraction Ho Ho Ho-->
-            <!--<div class="lr main-nav">
-                <p>
-                <a class="cd-login" href="#0">Login</a>&emsp;
-                <label class="separator">|</label>&emsp;
-                <a class="cd-register" href="#0">Register</a>
-                </p>
-            </div>
-            -->
             <div class="hosted-by">
                 Hosted by <a href="http://whitehacks.sg/">Whitehats 2016</a>
             </div>
@@ -209,21 +228,17 @@
 <script src="js/main.js"></script> <!-- Gem jQuery -->
 <script type="text/javascript">
     $(document).ready(function(){
-        console.log(window.location);
-        if (window.location.href.indexOf("test") == -1) {
-            console.log(window.location.pathname);
-            console.log(window.location.hostname);
-            window.location.replace("/test.jsp");
-            //window.location.pathname = "/test.jsp";
-            //window.location.href = window.location.origin + "/test.jsp";
-            //window.location.href = "";
+        var url = window.location.href;
+        if (url.indexOf("home") == -1) {
+            window.location.replace("/home.jsp");
         }
+
         if (window.history && window.history.pushState) {
 
-            window.history.pushState('forward', null, './');
+            window.history.pushState('forward', null, './home.jsp');
 
             $(window).on('popstate', function () {
-                window.history.pushState('forward', null, './');
+                window.history.pushState('forward', null, './home.jsp');
                 //alert('Back button was pressed.');
             });
         }

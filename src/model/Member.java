@@ -6,13 +6,13 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 /**
- * Created by User on 28/12/2015.
+ * Created by User on 31/1/2016.
  */
 @Entity
 public class Member {
     private int memberId;
     private String memberName;
-    private Integer groupId;
+    private Integer teamId;
 
     @Id
     @Column(name = "member_id", nullable = false)
@@ -35,13 +35,13 @@ public class Member {
     }
 
     @Basic
-    @Column(name = "group_id", nullable = true)
-    public Integer getGroupId() {
-        return groupId;
+    @Column(name = "team_id", nullable = true)
+    public Integer getTeamId() {
+        return teamId;
     }
 
-    public void setGroupId(Integer groupId) {
-        this.groupId = groupId;
+    public void setTeamId(Integer teamId) {
+        this.teamId = teamId;
     }
 
     @Override
@@ -53,7 +53,7 @@ public class Member {
 
         if (memberId != member.memberId) return false;
         if (memberName != null ? !memberName.equals(member.memberName) : member.memberName != null) return false;
-        if (groupId != null ? !groupId.equals(member.groupId) : member.groupId != null) return false;
+        if (teamId != null ? !teamId.equals(member.teamId) : member.teamId != null) return false;
 
         return true;
     }
@@ -62,7 +62,7 @@ public class Member {
     public int hashCode() {
         int result = memberId;
         result = 31 * result + (memberName != null ? memberName.hashCode() : 0);
-        result = 31 * result + (groupId != null ? groupId.hashCode() : 0);
+        result = 31 * result + (teamId != null ? teamId.hashCode() : 0);
         return result;
     }
 }

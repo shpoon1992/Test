@@ -33,8 +33,7 @@ public class AddQuestionServlet extends HttpServlet {
             out.println("next id is: " + id);
         }
         else {
-            Navigator navigator = new Navigator();
-            navigator.navigate(request, response, "", getServletContext());
+            Navigator.navigate(request, response, "", getServletContext());
             PrintWriter out = response.getWriter();
             out.println("nth");
         }

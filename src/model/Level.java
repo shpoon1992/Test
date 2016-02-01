@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 /**
- * Created by User on 28/12/2015.
+ * Created by User on 31/1/2016.
  */
 @Entity
 public class Level {
