@@ -33,17 +33,17 @@ $().ready(function() {
 	mainNav.on('click', '.cd-login', login_selected);
     
 	//close modal
-	/*formModal.on('click', function(event){
+	formModal.on('click', function(event){
 		if( $(event.target).is(formModal) || $(event.target).is('.cd-close-form') ) {
 			formModal.removeClass('is-visible');
         }	
-    });*/
+    });
 	//close modal when clicking the esc keyboard button
-	$(document).keyup(function(event){
+	/*$(document).keyup(function(event){
     	if(event.which=='27'){
     		formModal.removeClass('is-visible');
         }
-    });
+    });*/
     
 	//switch from a tab to another
 	/*formModalTab.on('click', function(event) {

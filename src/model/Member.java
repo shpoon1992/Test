@@ -13,6 +13,7 @@ public class Member {
     private int memberId;
     private String memberName;
     private Integer teamId;
+    private Integer memberPhone;
 
     @Id
     @Column(name = "member_id", nullable = false)
@@ -64,5 +65,15 @@ public class Member {
         result = 31 * result + (memberName != null ? memberName.hashCode() : 0);
         result = 31 * result + (teamId != null ? teamId.hashCode() : 0);
         return result;
+    }
+
+    @Basic
+    @Column(name = "member_phone", nullable = true)
+    public Integer getMemberPhone() {
+        return memberPhone;
+    }
+
+    public void setMemberPhone(Integer memberPhone) {
+        this.memberPhone = memberPhone;
     }
 }

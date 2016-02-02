@@ -48,6 +48,15 @@
         <url-pattern>/logout</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>ViewMemberDetailsServlet</servlet-name>
+        <servlet-class>servlet.ViewMemberDetailsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ViewMemberDetailsServlet</servlet-name>
+        <url-pattern>/view</url-pattern>
+    </servlet-mapping>
+
     <welcome-file-list>
         <welcome-file>test.jsp</welcome-file>
     </welcome-file-list>
