@@ -46,7 +46,7 @@
                         <a href="/retrieve?teamId=<%=team.getTeamId()%>">Edit Member Details</a>
                     </label>
                     <label class="answer-text answer-1 even" data-answer-number="1">
-                        <a href="">View Current Score</a>
+                        <a onclick="gotoscore();">View Current Score</a>
                     </label>
                 </div>
                 <div class="answer-row">

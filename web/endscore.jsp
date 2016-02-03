@@ -3,20 +3,19 @@
 <script type="text/javascript">
     $(document).ready(function(){
         var url = window.location.href;
-        if (url.indexOf("home") == -1) {
-            window.location.replace("/home.jsp");
+        if (url.indexOf("viewteamscore") == -1) {
+            window.location.replace("/viewteamscore.jsp");
         }
 
         if (window.history && window.history.pushState) {
-            window.history.pushState('forward', null, './home.jsp');
+            window.history.pushState('forward', null, './viewteamscore.jsp');
             $(window).on('popstate', function () {
-                window.history.pushState('forward', null, './home.jsp');
+                window.history.pushState('forward', null, './viewteamscore.jsp');
             });
         }
     });
-
-    function gotoscore() {
-        window.location.replace("/viewteamscore.jsp");
+    function backtohome() {
+        window.location.replace("/home.jsp");
     }
 </script>
 </body>
