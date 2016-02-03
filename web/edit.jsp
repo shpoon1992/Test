@@ -1,13 +1,15 @@
 <%@ page import="model.*" %>
+<%@ page import="java.util.*" %>
 <jsp:include page="start.jsp"/>
 <body>
 <%
+    System.out.println("bellow");
     HttpSession mySession = request.getSession(false);
     Team team = (Team) mySession.getAttribute("team");
+    List<Member> memberList = (List<Member>) mySession.getAttribute("mList");
 %>
 
 <div class="container-fluid site-contents">
-
     <!--    HEADER HERE     -->
     <jsp:include page="header.jsp"/>
     <!--    HEADER HERE     -->
@@ -23,55 +25,94 @@
 
         if (team != null) {
             System.out.println("signed in");
-            //Team team = (Team) mySession.getAttribute("team");
         %>
-        <div class='question-text'>Welcome <%=team.getTeamName() %>!</div>
-        <%--<nav class="main-nav">
+        <%--
+        <nav class="main-nav">
             <div class="cd-login login-register-text" href="#0">Log In</div>
             <br/>
             <div class="cd-register login-register-text" href="#0">Register</div>
-        </nav>--%>
+        </nav>
+        --%>
         <div class="questions">
-            <%--<div class="question-count">
-                <!--Question 1/8-->
+            <div class="question-count">
+                <%--Question 1/8--%>
+                <label onclick="backtohome();">Back to Home</label>
             </div>
             <div class='question-text'>
-                <!--How much time can you commit to the Santa gig?-->
-                MAIN MENU
-            </div>--%>
+                <%--How much time can you commit to the Santa gig?--%>
+                <%--MAIN MENU--%>
+            </div>
             <div class="answers clear clearfix">
+                <% for(int i = 0; i < memberList.size(); i++) {
+                        Member m = memberList.get(i);
+                %>
                 <div class="answer-row">
-                    <label class="answer-text answer-0 odd" data-answer-number="0">
-                        <%--I'm free this weekend--%>
-                        <a href="/retrieve?teamId=<%=team.getTeamId()%>">Edit Member Details</a>
+                    <label class="answer-text answer-0 odd center" data-answer-number="0">
+                        <%--I'm free this weekend
+                        <a href="/edit?teamId=<%=team.getTeamId()%>">Edit Member Details</a>--%>
+                        Member <%=(i+1)%>:
                     </label>
-                    <label class="answer-text answer-1 even" data-answer-number="1">
-                        <a href="">View Current Score</a>
+                    <br/><br/><br/><br/><br/><br/><br/><br/>
+                    <form action="/update" method="post">
+                        <input name="hidden" type="hidden" value="<%=m.getMemberId()%>;<%=team.getTeamId()%>" />
+                        Name:&emsp;&emsp;&emsp;<input name="name" type="text" value="<%=m.getMemberName()%>" /> <br/>
+                        <% if (m.getMemberPhone() != null) { %>
+                        Phone No:&emsp;&nbsp;<input name="phone" type="text" value="<%=m.getMemberPhone()%>" /> <br/>
+                        <% } else {%>
+                        Phone No:&emsp;&nbsp;<input name="phone" type="text" value="" /> <br/>
+                        <% } %>
+                        <input class="left-shift" type="submit" value="Update" />
+                    </form>
+                </div>
+                <br/><br/>
+                <% } %>
+                <%--
+                <div class="answer-row">
+                    <label class="answer-text answer-2 odd center" data-answer-number="2">
+                        Member 2:
+                    </label>
+                    <br/><br/><br/><br/><br/><br/><br/><br/>
+                    <form action="" method="post">
+                        Name:&emsp;&emsp;&emsp;<input name="name" type="text" /> <br/>
+                        Phone No:&emsp;&nbsp;<input name="phone" type="text" /> <br/>
+                        <input class="left-shift" type="submit" value="Update" />
+                    </form>
+                    <label class="answer-text answer-3 even" data-answer-number="3">
+                        Name: <input type="text" /> <br/>
+                        Phone No: <input type="text" /> <br/>
                     </label>
                 </div>
+                <br/><br/>
                 <div class="answer-row">
-                    <label class="answer-text answer-2 odd" data-answer-number="2">
-                        <a href="">Attempt Quiz</a>
+                    <label class="answer-text answer-4 odd center" data-answer-number="4">
+                        Member 3:
                     </label>
-                    <label class="answer-text answer-3 even" data-answer-number="3" onclick="onLogout()">
-                        <a href="/logout">Log Out</a>
+                    <br/><br/><br/><br/><br/><br/><br/><br/>
+                    <form action="" method="post">
+                        Name:&emsp;&emsp;&emsp;<input name="name" type="text" /> <br/>
+                        Phone No:&emsp;&nbsp;<input name="phone" type="text" /> <br/>
+                        <input class="left-shift" type="submit" value="Update" />
+                    </form>
+                    <label class="answer-text answer-5 even" data-answer-number="5">
+                        Name: <input type="text" /> <br/>
+                        Phone No: <input type="text" /> <br/>
                     </label>
                 </div>
+                <br/><br/>--%>
             </div>
         </div>
         <%
         } else {
             System.out.println("not signed in");
-            //Navigator.navigate(request, response, "/test.jsp", getServletConfig().getServletContext());
         %>
         <script type="text/javascript">
             window.location.replace("/test.jsp");
         </script>
         <%
-        }
+            }
         %>
-
-        <%--<div class="questions">
+        <%--
+        <div class="questions">
             <div class="question-count">
                 Question 1/8
             </div>
@@ -141,8 +182,8 @@
         For the third year in a row, we've teamed up with <a href="http://reforestlondon.ca/" target="_blank">Reforest London</a> to plant 100 trees on your behalf!
         </div>
         </div>
-        </div>--%>
-
+        </div>
+        --%>
     </div>
 
     <!--    BODY HERE     -->
@@ -154,4 +195,5 @@
     <!--    FOOTER HERE     -->
 
 </div>
-<jsp:include page="endhome.jsp"/>
+
+<jsp:include page="endedit.jsp"/>

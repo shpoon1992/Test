@@ -17,11 +17,24 @@ import java.lang.reflect.Member;
 import java.util.List;
 
 /**
- * Created by User on 2/2/2016.
+ * Created by User on 3/2/2016.
  */
-@WebServlet(name = "ViewMemberDetailsServlet")
-public class ViewMemberDetailsServlet extends HttpServlet {
+@WebServlet(name = "RetrieveMemberDetailsServlet")
+public class RetrieveMemberDetailsServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    }
+
+    private void onRetrieveSuccess(HttpServletRequest request, HttpServletResponse response, ServletContext context) {
+        try {
+            Navigator.navigate(request, response, "/edit.jsp", context);
+        }
+        catch (Exception ex) {
+            System.out.println(ex.getStackTrace().toString());
+        }
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int teamId = Integer.parseInt(request.getParameter("teamId"));
         EntityManager em = EMF.get().createEntityManager();
         em.getTransaction().begin();
@@ -37,18 +50,5 @@ public class ViewMemberDetailsServlet extends HttpServlet {
         session.setAttribute("mList",memberList);
 
         onRetrieveSuccess(request, response, getServletContext());
-    }
-
-    private void onRetrieveSuccess(HttpServletRequest request, HttpServletResponse response, ServletContext context) {
-        try {
-            Navigator.navigate(request, response, "/view_member.jsp", context);
-        }
-        catch (Exception ex) {
-            System.out.println(ex.getStackTrace().toString());
-        }
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
 }

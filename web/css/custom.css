@@ -27,6 +27,18 @@ html, body {
 .site-contents{
     min-height: 100vh;
 }
+
+.center{
+    margin-left: 250px;
+}
+
+.left-shift{
+    margin-right: 55px;
+}
+
+.top-shift{
+    margin-top: -55px;
+}
 /*
 .wrecking-ball{
     display: none;

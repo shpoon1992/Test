@@ -3,17 +3,20 @@
 <script type="text/javascript">
     $(document).ready(function(){
         var url = window.location.href;
-        if (url.indexOf("view") == -1) {
-            window.location.replace("/view.jsp");
+        if (url.indexOf("edit") == -1) {
+            window.location.replace("/edit.jsp");
         }
 
         if (window.history && window.history.pushState) {
-            window.history.pushState('forward', null, './view.jsp');
+            window.history.pushState('forward', null, './edit.jsp');
             $(window).on('popstate', function () {
-                window.history.pushState('forward', null, './view.jsp');
+                window.history.pushState('forward', null, './edit.jsp');
             });
         }
     });
+    function backtohome() {
+        window.location.replace("/home.jsp");
+    }
 </script>
 </body>
 </html>

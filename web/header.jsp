@@ -3,7 +3,7 @@
         <small>Whitehats presents: A CTF Understanding Quiz</small>
     </div>
     <div class="image float">
-        <!--<img height="204" width="155" src="img/whitehats.png" alt="santa's floating disembodied head" class="float" />-->
+        <%--<img height="204" width="155" src="img/whitehats.png" alt="santa's floating disembodied head" class="float" />--%>
         <img height="204" width="204" src="img/whitehats.png" alt="santa's floating disembodied head" class="float" />
     </div>
     <div>

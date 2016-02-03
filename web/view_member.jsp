@@ -99,4 +99,4 @@
     <!--    FOOTER HERE     -->
 
 </div>
-<jsp:include page="endview.jsp"/>
+<jsp:include page="endedit.jsp"/>

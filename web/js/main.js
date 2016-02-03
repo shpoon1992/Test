@@ -39,11 +39,11 @@ $().ready(function() {
         }	
     });
 	//close modal when clicking the esc keyboard button
-	/*$(document).keyup(function(event){
+	$(document).keyup(function(event){
     	if(event.which=='27'){
     		formModal.removeClass('is-visible');
         }
-    });*/
+    });
     
 	//switch from a tab to another
 	/*formModalTab.on('click', function(event) {
